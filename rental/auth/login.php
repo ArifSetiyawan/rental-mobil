@@ -1,47 +1,29 @@
-<div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form action="../ubsi-rental/index-dash.php" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-      <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
-    </div>
-    <!-- /.login-card-body -->
-  </div>
+<?php
+// mengaktifkan session php
+session_start();
+ 
+// menghubungkan dengan koneksi
+include('../../config/conn.php'); 
+// menangkap data yang dikirim dari form
+$username = $_POST['email'];
+$password = $_POST['password'];
+ 
+// menyeleksi data admin dengan username dan password yang sesuai
+$query = mysqli_query($conn,"SELECT * FROM user WHERE email='$username' AND pass='$password'");
+$data =mysqli_fetch_array($query);
+// print_r($data['role']);
+// die;
+// // menghitung jumlah data yang ditemukan
+$cek = mysqli_num_rows($query);
+// print_r($cek);
+ 
+if($cek > 0){
+	$_SESSION['email'] = $username;
+	$_SESSION['role'] = $data['role'];
+	$_SESSION['nama_user'] = $data['nama_user'];
+	$_SESSION['status'] = "login";
+	header("location:../dashboard/index.php");
+}else{
+	header("location:../../index.php");
+}
+?>

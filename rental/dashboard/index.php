@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,10 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <?php 
-  include('../header.php'); 
-  include('../sidebar.php'); 
-
+    include('../../config/conn.php');
+    session_start();
+    include('../header.php'); 
+    include('../sidebar.php'); 
   ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

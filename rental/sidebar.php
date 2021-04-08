@@ -22,58 +22,81 @@
               </p>
             </a>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
+        <?php 
+        if(@$_SESSION["role"] == "admin") {
+          echo"<li class='nav-item has-treeview'>
+          <a href='#' class='nav-link'>
+            <i class='nav-icon fas fa-book'></i>
             <p>
               Masterdata
-              <i class="fas fa-angle-left right"></i>
+              <i class='fas fa-angle-left right'></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../masterdata/master-mobil.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+          <ul class='nav nav-treeview'>
+            <li class='nav-item'>
+              <a href='../masterdata/master-mobil.php' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
                 <p>Mobil</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="../masterdata/master-pelanggan.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+            <li class='nav-item'>
+              <a href='../masterdata/master-pelanggan.php' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
                 <p>Pelanggan</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="../masterdata/master-user.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+            <li class='nav-item'>
+              <a href='../masterdata/master-user.php' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
                 <p>User</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+        <li class='nav-item has-treeview'>
+          <a href='#' class='nav-link'>
+            <i class='nav-icon fas fa-copy'></i>
             <p>
               Transaksi
-              <i class="right fas fa-angle-left"></i>
+              <i class='right fas fa-angle-left'></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Peminjaman Mobil</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+          <ul class='nav nav-treeview'>
+            <li class='nav-item'>
+              <a href='' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
                 <p>Reporting</p>
               </a>
             </li>
           </ul>
-        </li>
+        </li>";
+        } else {
+          echo"<li class='nav-item has-treeview'>
+          <a href='#' class='nav-link'>
+            <i class='nav-icon fas fa-copy'></i>
+            <p>
+              Transaksi
+              <i class='right fas fa-angle-left'></i>
+            </p>
+          </a>
+          <ul class='nav nav-treeview'>
+            <li class='nav-item'>
+              <a href='' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
+                <p>Peminjaman Mobil</p>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='' class='nav-link'>
+                <i class='far fa-circle nav-icon'></i>
+                <p>Reporting</p>
+              </a>
+            </li>
+          </ul>
+        </li>";
+        }
+        ?>
+        
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
