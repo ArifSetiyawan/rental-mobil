@@ -29,6 +29,7 @@
     $subtotal = $_POST['subtotal'];
     $discount = $_POST['discount'];
     $mBayar = $_POST['mBayar'];
+    $Badmin = $_POST['Badmin'];
     $total = $_POST['total'];
   ?>
     <div class="content-wrapper">
@@ -129,14 +130,13 @@
                     <div class="row">
                         <!-- accepted payments column -->
                         <div class="col-6">
-                        <p class="lead">Metode Pembayaran :</p>
-                        <p class="lead"><b><?php echo $mBayar ?></b></p>
+                        <p class="lead">Metode Pembayaran : <b><?php echo $mBayar ?></b></p>
                         
 
                         <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
                             Notes :
                         </p>
-                        <p class="text-muted well well-sm shadow-none" style="margin-top: 5px;">
+                        <p class="text-muted well well-sm shadow-none">
                             Jika anda memilih Metode Non Tunai akan ada tambahan biaya admin
                         </p>
                         </div>
@@ -156,7 +156,7 @@
                             </tr>
                             <tr>
                                 <th>Biaya Admin:</th>
-                                <td>$5.80</td>
+                                <td><?php echo $Badmin ?></td>
                             </tr>
                             <tr>
                                 <th>Total Bayar:</th>

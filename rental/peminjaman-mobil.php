@@ -105,6 +105,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="discount">Total Bayar</label>
+                                                <input type="hidden" class="form-control" name="Badmin" readonly id="Badmin">
                                                 <input type="text" class="form-control" name="total" readonly id="totalbayar">
                                             </div>
                                         </div>
@@ -160,7 +161,9 @@
         if ($('#mBayar').val() == 'Cash') {
             var total = ($('#durasi').val() * $('#hrgKapasitas').val()) - $('#discount').val();
         } else {
-            var total = ($('#durasi').val() * $('#hrgKapasitas').val()) - $('#discount').val() + 6500;
+            var biayaAdmin = 6500;
+            $('#Badmin').val(biayaAdmin);
+            var total = ($('#durasi').val() * $('#hrgKapasitas').val()) - $('#discount').val() + biayaAdmin;
         }
         $('#totalbayar').val(total);
     })
