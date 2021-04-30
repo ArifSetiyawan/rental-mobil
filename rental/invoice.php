@@ -31,6 +31,9 @@
     $mBayar = $_POST['mBayar'];
     $Badmin = $_POST['Badmin'];
     $total = $_POST['total'];
+    $orderid = 'BSI-' . date('d/m/Y');
+    $tanggal = date('d/m/Y');
+    $tenggat = date("d F Y",strtotime ('+4 days',strtotime($tanggal)));
   ?>
     <div class="content-wrapper">
         <section class="content-header">
@@ -91,8 +94,10 @@
                         <div class="col-sm-4 invoice-col">
                         <b>Invoice #007612</b><br>
                         <br>
-                        <b>Order ID:</b> 4F3S8J<br>
-                        <b>Payment Due:</b> 2/22/2014<br>
+                        <?php
+                        echo <b>Order ID:</b> $orderid;
+                        echo <b>Payment Due:</b> $tenggat;<br>
+                        ?>
                         <b>Account:</b> 968-34567
                         </div>
                         <!-- /.col -->
