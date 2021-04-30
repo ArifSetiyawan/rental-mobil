@@ -131,8 +131,6 @@
                         <!-- accepted payments column -->
                         <div class="col-6">
                         <p class="lead">Metode Pembayaran : <b><?php echo $mBayar ?></b></p>
-                        
-
                         <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
                             Notes :
                         </p>
