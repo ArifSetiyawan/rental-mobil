@@ -94,9 +94,8 @@
                         <div class="col-sm-4 invoice-col">
                         <b>Invoice #007612</b><br>
                         <br>
-                        <?php
-                        echo <b>Order ID:</b> $orderid;
-                        echo <b>Payment Due:</b> $tenggat;<br>
+                        <b>Order ID:</b><?php echo $orderid ?>;
+                        <b>Payment Due:</b><?php echo $tenggat ?><br>
                         ?>
                         <b>Account:</b> 968-34567
                         </div>
