@@ -94,9 +94,8 @@
                         <div class="col-sm-4 invoice-col">
                         <b>Invoice #007612</b><br>
                         <br>
-                        <b>Order ID:</b><?php echo $orderid ?>;
-                        <b>Payment Due:</b><?php echo $tenggat ?><br>
-                        ?>
+                        <b>Order ID:</b> <?php echo $orderid ?><br>
+                        <b>Payment Due:</b> <?php echo $tenggat ?><br>
                         <b>Account:</b> 968-34567
                         </div>
                         <!-- /.col -->
@@ -158,7 +157,12 @@
                             </tr>
                             <tr>
                                 <th>Biaya Admin:</th>
-                                <td><?php echo $Badmin ?></td>
+                                <td><?php 
+                                if ($Badmin == 0) {
+                                    echo $Badmin;
+                                } else {
+                                    echo '-';
+                                }?></td>
                             </tr>
                             <tr>
                                 <th>Total Bayar:</th>
