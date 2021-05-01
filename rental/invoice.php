@@ -158,7 +158,7 @@
                             <tr>
                                 <th>Biaya Admin:</th>
                                 <td><?php 
-                                if ($Badmin == 0) {
+                                if ($Badmin != 0) {
                                     echo $Badmin;
                                 } else {
                                     echo '-';
